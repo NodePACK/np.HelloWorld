@@ -1,0 +1,45 @@
+{
+    "name": "np.HelloWorld",
+    "version": "0.0.0",
+    "dependencies": {
+        "chalk": "^1.1.1",
+        "node.pack": "0.0.0"
+    },
+    "node.pack": {
+        "packs": {
+            "archive.tar.gz": {
+                "packer": {
+                    "module": "node.pack/packers/git",
+                    "config": {
+                    }
+                }
+            }
+        },
+        "DISABLED_packs": {
+            "archive.tar.gz": {
+                "packer": {
+                    "module": "node.pack/packers/asis"
+                },
+                "syncer": [
+                    {
+                        "module": "node.pack/syncers/aws.s3",
+                        "config": {
+                            "iamUserName": "io.nodepack.dev",
+                            "accessKeyId": "{{ENV.AWS_ACCESS_KEY_ID}}",
+                            "secretAccessKey": "{{ENV.AWS_SECRET_ACCESS_KEY}}",
+                            "s3": {
+                                "region": "us-west-1",
+                                "publicHost": "s3-us-west-1.amazonaws.com",
+                                "path": "official",
+                                "bucket": "builds.nodepack.io"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "scripts": {
+        "pack": "node.pack"
+    }
+}
