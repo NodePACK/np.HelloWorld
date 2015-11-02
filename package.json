@@ -7,15 +7,10 @@
     },
     "node.pack": {
         "packs": {
-            "archive.tar.gz": {
+            "inline": {
                 "packer": {
                     "module": "node.pack/packers/git",
                     "config": {
-                        "ignoreSubmodules": [
-                        ],
-                        "searchPaths": [
-                            "/node_modules/*/package.json"
-                        ]                        
                     }
                 }
             }
@@ -23,7 +18,14 @@
         "DISABLED_packs": {
             "archive.tar.gz": {
                 "packer": {
-                    "module": "node.pack/packers/asis"
+                    "module": "node.pack/packers/asis",
+                    "config": {
+                        "ignoreSubmodules": [
+                        ],
+                        "searchPaths": [
+                            "/node_modules/*/package.json"
+                        ]                        
+                    }
                 },
                 "syncer": [
                     {
