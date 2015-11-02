@@ -1,3 +1,0 @@
-[submodule "node_modules/ascii-art"]
-	path = node_modules/ascii-art
-	url = git@github.com:khrome/ascii-art.git
