@@ -11,6 +11,11 @@
                 "packer": {
                     "module": "node.pack/packers/git",
                     "config": {
+                        "ignoreSubmodules": [
+                        ],
+                        "searchPaths": [
+                            "/node_modules/*/package.json"
+                        ]                        
                     }
                 }
             }
