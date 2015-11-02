@@ -1,0 +1,10 @@
+{
+    "submodules": {
+        "/node_modules/ascii-art": {
+            "branch": "master",
+            "date": 1423544135000,
+            "ref": "969d84fb0330a4127e274d1797f989882136c5e2",
+            "url": "git@github.com:khrome/ascii-art.git"
+        }
+    }
+}
